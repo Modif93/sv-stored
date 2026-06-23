@@ -9,6 +9,8 @@ catalog:
   '@sveltejs/kit': ^2.43.1
   '@sveltejs/adapter-auto': ^6.1.0
   '@sveltejs/vite-plugin-svelte': ^6.2.1
+  '@types/node': ^24.10.0
+  svelte-check: ^4.3.3
 
 onlyBuiltDependencies:
   - esbuild

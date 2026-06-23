@@ -1,16 +1,29 @@
 {
+	"extends": "./.svelte-kit/tsconfig.json",
 	"compilerOptions": {
-		"target": "ES2022",
+		"allowJs": true,
+		"checkJs": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"resolveJsonModule": true,
+		"skipLibCheck": true,
+		"sourceMap": true,
+		"strict": true,
 		"module": "NodeNext",
 		"moduleResolution": "NodeNext",
-		"strict": true,
-		"skipLibCheck": true,
-		"declaration": true,
-		"declarationMap": true,
-		"sourceMap": true,
-		"isolatedModules": true,
-		"verbatimModuleSyntax": true,
-		"noEmit": true
+		"noUncheckedIndexedAccess": true,
+		"types": ["vitest/globals"],
+		"experimentalDecorators": true
 	},
-	"include": ["src/**/*.ts"]
+	"include": [
+		"./.svelte-kit/ambient.d.ts",
+		"./.svelte-kit/non-ambient.d.ts",
+		"./.svelte-kit/types/**/$types.d.ts",
+		"./src/**/*.js",
+		"./src/**/*.ts",
+		"./src/**/*.svelte",
+		"./vite.config.ts",
+		"./svelte.config.js",
+		"./setupTest.ts"
+	]
 }

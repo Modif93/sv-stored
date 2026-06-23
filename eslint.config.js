@@ -1,41 +1,67 @@
 import prettier from 'eslint-config-prettier';
-import path from 'node:path';
 import js from '@eslint/js';
+import { includeIgnoreFile } from '@eslint/compat';
 import svelte from 'eslint-plugin-svelte';
-import { defineConfig, includeIgnoreFile } from 'eslint/config';
 import globals from 'globals';
+import { fileURLToPath } from 'node:url';
 import ts from 'typescript-eslint';
+import oxlint from 'eslint-plugin-oxlint';
+const gitignorePath = fileURLToPath(new URL('./.gitignore', import.meta.url));
 
-const gitignorePath = path.resolve(import.meta.dirname, '.gitignore');
-
-export default defineConfig(
+export default ts.config(
 	includeIgnoreFile(gitignorePath),
 	js.configs.recommended,
-	ts.configs.recommended,
-	svelte.configs.recommended,
+	...ts.configs.recommended,
+	...svelte.configs.recommended,
 	prettier,
-	svelte.configs.prettier,
+	...svelte.configs.prettier,
 	{
-		languageOptions: { globals: { ...globals.browser, ...globals.node } },
-		rules: {
-			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
-			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-			'no-undef': 'off'
-		}
+		languageOptions: {
+			globals: { ...globals.browser, ...globals.node }
+		},
+		rules: { 'no-undef': 'off' }
 	},
 	{
 		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
+		ignores: ['eslint.config.js', 'svelte.config.js'],
 		languageOptions: {
 			parserOptions: {
 				projectService: true,
 				extraFileExtensions: ['.svelte'],
 				parser: ts.parser
 			}
+		},
+		rules: {
+			'prefer-const': 'off',
+			'svelte/no-navigation-without-resolve': 'off',
+			'svelte/prefer-svelte-reactivity': 'off',
+			'no-unused-private-class-members': 'off'
 		}
 	},
 	{
-		// Override or add rule settings here, such as:
-		// 'svelte/button-has-type': 'error'
-		rules: {}
-	}
+		rules: {
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_'
+				}
+			],
+			'@typescript-eslint/no-unused-expressions': 'off',
+			'@typescript-eslint/no-empty-object-type': 'off'
+		}
+	},
+	{
+		ignores: [
+			'build/',
+			'.svelte-kit/',
+			'dist/',
+			'.svelte-kit/**/*',
+			'sites/docs/.svelte-kit/**/*',
+			'.svelte-kit',
+			'packages/runed/dist/**/*',
+			'packages/runed/.svelte-kit/**/*'
+		]
+	},
+	...oxlint.configs['flat/recommended']
 );

@@ -83,9 +83,7 @@ export function createStored<T>(
 		}
 	};
 
-	let api: Stored<T>;
-
-	api = {
+	const api: Stored<T> = {
 		subscribe: (run: Subscriber<T>, invalidate?: () => void): Unsubscriber =>
 			base.subscribe(run, invalidate),
 		set: (value: T) => setState(value, true),
