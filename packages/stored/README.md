@@ -1,9 +1,9 @@
-# sv-stored
+# @modif93/sv-stored
 
 Zustand-style middleware composition for Svelte stores.
 
 ```ts
-import { createStored, logger, persist } from 'sv-stored';
+import { createStored, logger, persist } from '@modif93/sv-stored';
 
 type Counter = {
 	count: number;

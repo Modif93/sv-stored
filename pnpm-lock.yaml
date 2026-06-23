@@ -176,7 +176,7 @@ importers:
 
   sites/docs:
     dependencies:
-      sv-stored:
+      '@modif93/sv-stored':
         specifier: workspace:*
         version: link:../../packages/stored
     devDependencies:

@@ -32,16 +32,16 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Install Playwright browsers
-        run: pnpm -F sv-stored exec playwright install --with-deps chromium
+        run: pnpm -F @modif93/sv-stored exec playwright install --with-deps chromium
 
       - name: Type check
         run: pnpm check
 
       - name: Unit tests
-        run: pnpm -F sv-stored exec vitest --run
+        run: pnpm -F @modif93/sv-stored exec vitest --run
 
       - name: Playwright tests
-        run: pnpm -F sv-stored exec playwright test
+        run: pnpm -F @modif93/sv-stored exec playwright test
 
       - name: Build packages
         run: pnpm build:packages
