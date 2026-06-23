@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { createStored, logger, persist } from 'sv-stored';
+	import { createStored, logger, persist } from '@modif93/sv-stored';
 
 	type Counter = {
 		count: number;
@@ -22,8 +22,8 @@
 
 	const count = counter.select((state) => state.count);
 
-	const install = 'pnpm add sv-stored';
-	const example = `import { createStored, persist } from 'sv-stored';
+	const install = 'pnpm add @modif93/sv-stored';
+	const example = `import { createStored, persist } from '@modif93/sv-stored';
 
 export const counter = createStored(
   (set) => ({
