@@ -29,7 +29,7 @@
 	],
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/modif93/sv-stored",
+		"url": "git+https://github.com/Modif93/sv-stored.git",
 		"directory": "packages/stored"
 	},
 	"scripts": {
