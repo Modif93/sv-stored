@@ -13,7 +13,7 @@
 		"test": "pnpm check"
 	},
 	"dependencies": {
-		"sv-stored": "workspace:*"
+		"@modif93/sv-stored": "workspace:*"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "catalog:",

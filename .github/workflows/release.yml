@@ -38,7 +38,7 @@ jobs:
         run: pnpm check
 
       - name: Unit tests
-        run: pnpm -F sv-stored exec vitest --run
+        run: pnpm -F @modif93/sv-stored exec vitest --run
 
       - name: Create release PR or publish
         uses: changesets/action@v1

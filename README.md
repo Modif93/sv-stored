@@ -10,20 +10,20 @@ Stored extends [Svelte stores](https://svelte.dev/docs/svelte/svelte-store) with
 ## Packages
 
 ```txt
-packages/stored  # sv-stored library
+packages/stored  # @modif93/sv-stored library
 sites/docs       # SvelteKit documentation site
 ```
 
 ## Install
 
 ```sh
-pnpm add sv-stored
+pnpm add @modif93/sv-stored
 ```
 
 ## Quick start
 
 ```ts
-import { createStored, logger, persist } from 'sv-stored';
+import { createStored, logger, persist } from '@modif93/sv-stored';
 
 type Counter = {
 	count: number;
@@ -135,16 +135,16 @@ pnpm build
 Build only the package:
 
 ```sh
-pnpm -F sv-stored build
+pnpm -F @modif93/sv-stored build
 ```
 
 ## Publishing
 
-The package is published from `packages/stored` as `sv-stored`.
+The package is published from `packages/stored` as `@modif93/sv-stored`.
 
 ```sh
-pnpm -F sv-stored build
-pnpm -F sv-stored publish
+pnpm -F @modif93/sv-stored build
+pnpm -F @modif93/sv-stored publish
 ```
 
 ## License

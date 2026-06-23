@@ -1,11 +1,14 @@
 {
-	"name": "sv-stored",
+	"name": "@modif93/sv-stored",
 	"description": "Zustand-style middleware composition for Svelte stores.",
 	"version": "0.0.1",
 	"type": "module",
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"license": "MIT",
+	"publishConfig": {
+		"access": "public"
+	},
 	"keywords": [
 		"svelte",
 		"svelte5",
