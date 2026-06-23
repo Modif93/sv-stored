@@ -1,7 +1,7 @@
 {
 	"name": "@modif93/sv-stored",
 	"description": "Zustand-style middleware composition for Svelte stores.",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"type": "module",
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
