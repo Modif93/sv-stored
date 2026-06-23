@@ -1,0 +1,33 @@
+{
+	"name": "sv-stored",
+	"description": "Zustand-style middleware composition for Svelte stores.",
+	"version": "0.0.1",
+	"type": "module",
+	"license": "MIT",
+	"sideEffects": false,
+	"files": [
+		"dist",
+		"src/lib"
+	],
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"default": "./dist/index.js"
+		}
+	},
+	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"check": "tsc -p tsconfig.json --noEmit",
+		"dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+		"sync": "echo stored: no sync step",
+		"test": "pnpm check"
+	},
+	"peerDependencies": {
+		"svelte": ">=5.0.0"
+	},
+	"devDependencies": {
+		"svelte": "catalog:",
+		"typescript": "catalog:"
+	}
+}

@@ -1,0 +1,27 @@
+{
+	"name": "docs",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"build:content": "echo docs: no content build step",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && tsc -p tsconfig.json --noEmit",
+		"sync": "svelte-kit sync",
+		"test": "pnpm check"
+	},
+	"dependencies": {
+		"sv-stored": "workspace:*"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "catalog:",
+		"@sveltejs/kit": "catalog:",
+		"@sveltejs/vite-plugin-svelte": "catalog:",
+		"@types/node": "^24.10.0",
+		"svelte": "catalog:",
+		"typescript": "catalog:",
+		"vite": "catalog:"
+	}
+}
